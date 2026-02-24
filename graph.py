@@ -69,7 +69,7 @@ class GraphConstraint:
 
 def build_rook_graph(num_rows: int, num_cols: int, num_colors: int) -> GraphConstraint:
     rows = [[i + j * num_cols for i in range(num_cols)] for j in range(num_rows)]
-    cols = [[i * num_cols + j for i in range(num_cols)] for j in range(num_rows)]
+    cols = [[i * num_cols + j for i in range(num_rows)] for j in range(num_cols)]
 
     return GraphConstraint.build(
         V=num_rows * num_cols, k=num_colors, _cliques=rows + cols
