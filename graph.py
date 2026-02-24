@@ -9,7 +9,7 @@ class GraphConstraint:
     cliques: tuple[tuple[int, ...], ...]  # constraints
     cliques_containing_vertex: tuple[tuple[int, ...], ...]  # inverse index
     neighbors: tuple[tuple[int, ...], ...]  # adjacency list
-    neighbors_bits: tuple[tuple[int, ...], ...]  # adjacency bitset
+    neighbors_bits: tuple[int, ...]  # adjacency bitset
 
     @staticmethod
     def build(V: int, k: int, _cliques: Sequence[Sequence[int]]) -> "GraphConstraint":
