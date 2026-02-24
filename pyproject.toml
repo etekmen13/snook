@@ -1,0 +1,9 @@
+[project]
+name = "snook"
+version = "0.1.0"
+description = "snook: sudoku numbers of rook graphs"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "ortools>=9.15.6755",
+]
