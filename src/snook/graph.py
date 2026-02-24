@@ -74,3 +74,23 @@ def build_rook_graph(num_rows: int, num_cols: int, num_colors: int) -> GraphCons
     return GraphConstraint.build(
         V=num_rows * num_cols, k=num_colors, _cliques=rows + cols
     )
+
+
+def test_rook_graph_2x3_neighbors():
+    g = build_rook_graph(2, 3, 3)
+
+    # vertex layout:
+    # 0 1 2
+    # 3 4 5
+
+    expected = {
+        0: {1, 2, 3},
+        1: {0, 2, 4},
+        2: {0, 1, 5},
+        3: {0, 4, 5},
+        4: {1, 3, 5},
+        5: {2, 3, 4},
+    }
+
+    for v in range(g.V):
+        assert set(g.neighbors[v]) == expected[v]
