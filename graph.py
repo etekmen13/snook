@@ -12,7 +12,7 @@ class GraphConstraint:
 
     @staticmethod
     def build(
-        V: int, k: int, _cliques: [list[list[int] | tuple[int, ...]]]
+        V: int, k: int, _cliques: list[list[int] | tuple[int, ...]]
     ) -> "GraphConstraint":
         if V <= 0:
             raise ValueError("V must be positive")
