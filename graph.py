@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from typing import Sequence
 
 
 @dataclass(frozen=True, slots=True)
@@ -11,9 +12,7 @@ class GraphConstraint:
     neighbors_bits: tuple[tuple[int, ...], ...]  # adjacency bitset
 
     @staticmethod
-    def build(
-        V: int, k: int, _cliques: list[list[int] | tuple[int, ...]]
-    ) -> "GraphConstraint":
+    def build(V: int, k: int, _cliques: Sequence[Sequence[int]]) -> "GraphConstraint":
         if V <= 0:
             raise ValueError("V must be positive")
         if k <= 0:
